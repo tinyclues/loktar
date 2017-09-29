@@ -66,10 +66,10 @@ docs:
 	@echo 'to do gen doc'
 
 register: clean build
-	docker-compose -f docker-compose.yml -f docker-compose-release.yml run --no-deps loktar python setup.py register -r pypi
+	docker-compose -f docker-compose.yml -f docker-compose-release.yml run --no-deps loktar python setup.py register -r tinypypi
 
 release: clean build
-	docker-compose -f docker-compose.yml -f docker-compose-release.yml run --no-deps loktar python setup.py bdist_wheel upload -r pypi
+	docker-compose -f docker-compose.yml -f docker-compose-release.yml run --no-deps loktar python setup.py bdist_wheel upload -r tinypypi
 
 dist: clean
 	python setup.py sdist

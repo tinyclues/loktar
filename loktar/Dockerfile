@@ -4,4 +4,6 @@ COPY src /src
 
 WORKDIR /src
 
-RUN pip install -r requirements.txt -r test_requirements.txt ipython
+COPY pip.conf /root/.pip/pip.conf
+
+RUN pip install -r requirements.txt -r test_requirements.txt "ipython<6"

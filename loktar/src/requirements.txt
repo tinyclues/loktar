@@ -17,11 +17,11 @@ cffi==1.6.0
 pycrypto==2.6.1
 pypicloud_client==5
 slacker==0.9.21
-quay_client==7
+quay_client==8
 bravado==8.1.2
 python-etcd==0.4.3
 pymongo==2.8
 smart-getenv==1.1.0
 elasticsearch==5.0.0
 docker==2.0.2
-cryptography==1.8.1
+cryptography==1.2.3
