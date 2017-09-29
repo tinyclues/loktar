@@ -26,6 +26,13 @@ MAX_RETRY_GITHUB = getenv("LOKTAR_MAX_RETRY_GITHUB", type=int, default=3)
 
 CONSUL = getenv("CONSUL_HOST", type=str, default=None)
 
+ARTIFACTORY_INFO = {
+    "login": {
+        "user": getenv("LOKTAR_ARTIFACTORY_INFO_LOGIN_USER", type=str, default=None),
+        "password": getenv("LOKTAR_ARTIFACTORY_INFO_LOGIN_PASSWORD", type=str, default=None)
+    }
+}
+
 GITHUB_INFO = {
     "login": {
         "user": getenv("LOKTAR_GITHUB_INFO_LOGIN_USER", type=str, default=None),
