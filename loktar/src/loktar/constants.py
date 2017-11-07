@@ -43,7 +43,7 @@ GITHUB_INFO = {
     "notification": {
         "pending": getenv("LOKTAR_GITHUB_INFO_NOTIFICATION_PENDING",
                           type=str,
-                          default="The build is running. If i was you I would leave quickly"),
+                          default="The build is running. If I were you I would leave quickly"),
         "success": getenv("LOKTAR_GITHUB_INFO_NOTIFICATION_SUCCESS",
                           type=str,
                           default="The build succeded! You're not so bad after all"),
