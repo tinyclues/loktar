@@ -16,16 +16,15 @@ def docker_deps(basepath):
         with open(docker_file, "r") as f:
             dockerfile = f.read()
         re_dockerfile = re.compile("FROM (.+)")
-        docker_from = re_dockerfile.findall(dockerfile)
-        assert len(docker_from) <= 1
-        if docker_from:
-            docker_from = docker_from[0]
-            docker_image_name_tag = docker_from.rsplit("/", 1)[-1]
-            docker_image_name = docker_image_name_tag.split(":", 1)[0]
-            return {docker_image_name}
-        else:
-            return set()
-    else:
-        return set()
+        docker_from_list = re_dockerfile.findall(dockerfile)
+
+        if docker_from_list:
+            def map_docker_image(docker_from):
+                docker_image_name_tag = docker_from.rsplit("/", 1)[-1]
+                return docker_image_name_tag.split(":", 1)[0]
+
+            return {map_docker_image(docker_from) for docker_from in docker_from_list}
+    return set()
+
 
 Plugin = docker_deps
